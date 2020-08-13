@@ -3,8 +3,12 @@ cargo-features = ["strip"]
 [package]
 name = "rocket-pastebin"
 version = "0.1.0"
-authors = ["HF-Vitriol <hiukwong1999@gmail.com>"]
+authors = ["Hugo Tse <hktse2006@gmail.com>"]
+description = "A pastebin made with react and rocket"
 edition = "2018"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/hktse/rocket-pastebin"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
