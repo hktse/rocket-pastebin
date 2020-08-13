@@ -1,0 +1,32 @@
+@keyframes textPhase {
+  from { color: white }
+  to { color: rgb(230, 165, 230) }
+}
+
+
+body {
+  background-image: linear-gradient(to bottom right, rgb(68, 0, 107), rgb(33, 0, 48));
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  animation-name: textPhase;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin-bottom: 15px;
+  font-weight: 600
+}

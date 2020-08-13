@@ -1,0 +1,22 @@
+cargo-features = ["strip"]
+
+[package]
+name = "rocket-pastebin"
+version = "0.1.0"
+authors = ["HF-Vitriol <hiukwong1999@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+lto = true
+strip = "symbols"
+
+[dependencies]
+rocket = "~0.4.0"
+rand = "~0.7.0"
+
+[dependencies.rocket_contrib]
+version = "~0.4.0"
+default-features = false
+features = ["serve"]
