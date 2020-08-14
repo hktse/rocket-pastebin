@@ -7,15 +7,15 @@ extern crate rocket_contrib;
 
 use rocket_pastebin::PasteID;
 use rocket::Data;
+use rocket::response::NamedFile;
 use rocket_contrib::serve::StaticFiles;
-use std::fs;
 
 #[get("/<id>")]
-fn recieve(id: PasteID) -> Option<String> {
-    fs::read_to_string(format!("uploads/{}.txt", id)).ok()
+fn recieve(id: PasteID) -> Option<NamedFile> {
+    NamedFile::open(format!("uploads/{}.txt", id)).ok()
 }
 
-#[post("/", data = "<data>")]
+#[post("/", data = "<data>", format = "text/plain")]
 fn upload(data: Data) -> String {
     let id = PasteID::new();
     data.stream_to_file(format!("uploads/{}.txt", id)).unwrap();
